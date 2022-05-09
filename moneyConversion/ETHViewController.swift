@@ -2,30 +2,24 @@
 //  ETHViewController.swift
 //  moneyConversion
 //
-//  Created by Devin Campaña on 4/26/22.
+//  Created by Devin Campaña on 5/2/22.
 //
 
 import Foundation
 import UIKit
 import WebKit
 
-class ETHViewController: UIViewController, WKNavigationDelegate {
+class ETHViewController: UIViewController, UITextViewDelegate {
     
-
-     @IBOutlet weak var webView: WKWebView!
-     
-
-  let sampleURL = "https://www.coindesk.com/price/ethereum/"
-     override func viewDidLoad() {
-         super.viewDidLoad()
-         self.sendRequest(urlString: sampleURL)
-
-         // Do any additional setup after loading the view.
-     }
-
-     func sendRequest(urlString: String) {
-         let myURL = URL(string: urlString)
-         let myRequest = URLRequest(url: myURL!)
-         webView.load(myRequest)
-     }
+    @IBOutlet var textView: UITextView!
+    override func viewDidLoad() {
+        let attributedString = NSMutableAttributedString(string: "Live Bitcoin Exchange")
+        attributedString.addAttribute(.link, value: "https://www.livecoinwatch.com/", range: NSRange(location: 19, length: 55))
+        textView.attributedText = attributedString
+    }
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        UIApplication.shared.open(URL)
+        return false
+    }
 }
+

@@ -128,7 +128,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Currency Info..."/>
                                 <connections>
-                                    <segue destination="ylJ-by-3Ik" kind="show" id="ZV5-sa-WMe"/>
+                                    <segue destination="d4o-Sf-UdR" kind="show" id="wyI-zk-GFy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEn-VD-MqQ">
@@ -154,6 +154,36 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="83.705357142857139"/>
         </scene>
+        <!--View Controller1-->
+        <scene sceneID="mBs-Do-FQQ">
+            <objects>
+                <viewController id="d4o-Sf-UdR" customClass="ViewController1" customModule="moneyConversion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8gG-OH-oYj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wyW-yx-GY1">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WNS-u7-cyV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lfW-j4-Xxw"/>
+                    <connections>
+                        <outlet property="webView" destination="wyW-yx-GY1" id="U6e-cm-RYI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fh8-hi-c7l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1686.9565217391305" y="83.705357142857139"/>
+        </scene>
         <!--Crypto View Controller-->
         <scene sceneID="MQE-vL-uvU">
             <objects>
@@ -167,9 +197,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Ethereum"/>
+                                <connections>
+                                    <segue destination="5i1-Wh-gJ3" kind="show" id="KGG-Na-T55"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvt-yU-rq6">
-                                <rect key="frame" x="222" y="384" width="172" height="127"/>
+                                <rect key="frame" x="200" y="385" width="172" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Bitcoin "/>
@@ -184,35 +217,34 @@
             </objects>
             <point key="canvasLocation" x="1686.9565217391305" y="-689.0625"/>
         </scene>
-        <!--View Controller1-->
-        <scene sceneID="n54-sE-HbY">
+        <!--View Controller-->
+        <scene sceneID="S93-iZ-7IF">
             <objects>
-                <viewController id="ylJ-by-3Ik" customClass="ViewController1" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="H2V-vV-w7N">
+                <viewController id="5i1-Wh-gJ3" customClass="ETHViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mvo-mh-guT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Iu-Co-8zv">
-                                <rect key="frame" x="0.0" y="112" width="414" height="750"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Live Bitcoin Exchange " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="leq-ut-0cx" customClass="textView">
+                                <rect key="frame" x="87" y="277" width="240" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="systemBlueColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="jNI-85-eNU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="frS-Mh-ibg"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="b0m-ik-HKQ"/>
+                    <navigationItem key="navigationItem" id="bbs-tB-R9s"/>
                     <connections>
-                        <outlet property="webView" destination="8Iu-Co-8zv" id="xlm-aI-knZ"/>
+                        <outlet property="textView" destination="leq-ut-0cx" id="6bT-Ff-zFt"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sGJ-M4-GI3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VQC-z4-Pkk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1737.68115942029" y="83.705357142857139"/>
+            <point key="canvasLocation" x="2494.202898550725" y="-964.28571428571422"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oKv-Z3-tn8">
@@ -242,6 +274,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
